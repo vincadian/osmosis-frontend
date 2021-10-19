@@ -233,6 +233,18 @@ export const IBCAssetInfos: {
 		destChannelId: 'channel-3',
 		coinMinimalDenom: 'nanolike',
 	},
+	{
+		counterpartyChainId: 'bombay-12',
+		sourceChannelId: 'channel-48',
+		destChannelId: 'channel-2',
+		coinMinimalDenom: 'uluna',
+	},
+	{
+		counterpartyChainId: 'bombay-12',
+		sourceChannelId: 'channel-48',
+		destChannelId: 'channel-2',
+		coinMinimalDenom: 'uusd',
+	},
 ];
 
 export const EmbedChainInfos: ChainInfoWithExplorer[] = [
@@ -733,5 +745,56 @@ export const EmbedChainInfos: ChainInfoWithExplorer[] = [
 		],
 		features: ['stargate', 'ibc-transfer'],
 		explorerUrlToTx: 'https://likecoin.bigdipper.live/transactions/${txHash}',
+	},
+	{
+		rpc: 'https://bombay-12--rpc--full.datahub.figment.io/apikey/dee1c5b066101f41abb652efc439fb5d/',
+		rest: 'https://bombay-12--lcd--full.datahub.figment.io/apikey/dee1c5b066101f41abb652efc439fb5d/',
+		chainId: 'bombay-12',
+		chainName: 'Bombay',
+		stakeCurrency: {
+			coinDenom: 'LUNA',
+			coinMinimalDenom: 'uluna',
+			coinDecimals: 6,
+			coinGeckoId: 'terra-luna',
+		},
+		bip44: {
+			coinType: 330,
+		},
+		bech32Config: Bech32Address.defaultBech32Config('terra'),
+		currencies: [
+			{
+				coinDenom: 'LUNA',
+				coinMinimalDenom: 'uluna',
+				coinDecimals: 6,
+				coinGeckoId: 'terra-luna',
+			},
+			{
+				coinDenom: 'UST',
+				coinMinimalDenom: 'uusd',
+				coinDecimals: 6,
+				coinGeckoId: 'terrausd',
+			},
+		],
+		feeCurrencies: [
+			{
+				coinDenom: 'LUNA',
+				coinMinimalDenom: 'uluna',
+				coinDecimals: 6,
+				coinGeckoId: 'terra-luna',
+			},
+			{
+				coinDenom: 'UST',
+				coinMinimalDenom: 'uusd',
+				coinDecimals: 6,
+				coinGeckoId: 'terrausd',
+			},
+		],
+		gasPriceStep: {
+			low: 0.014,
+			average: 0.014,
+			high: 0.014,
+		},
+		features: ['stargate', 'ibc-transfer', 'no-legacy-stdTx'],
+		explorerUrlToTx: 'https://finder.terra.money/columbus-5/tx/${txHash}',
 	},
 ];
