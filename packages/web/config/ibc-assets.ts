@@ -77,6 +77,13 @@ export const IBCAssetInfos: (IBCAsset & {
     coinMinimalDenom: "uatom",
     isVerified: true,
   },
+   {
+    counterpartyChainId: "arkh",
+    sourceChannelId: "channel-120",
+    destChannelId: "channel-0",
+    coinMinimalDenom: "uarkh",
+    isVerified: true,
+  },
   {
     counterpartyChainId: "crypto-org-chain-mainnet-1",
     sourceChannelId: "channel-5",
